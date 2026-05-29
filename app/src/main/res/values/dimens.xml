@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="scenery_gallery_image_width">132dp</dimen>
+    <dimen name="scenery_gallery_image_height">88dp</dimen>
+    <dimen name="scenery_gallery_image_gap">10dp</dimen>
+</resources>

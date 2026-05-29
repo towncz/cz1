@@ -2,14 +2,24 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg_app"
     android:orientation="vertical"
     android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/detailImageView"
+        android:layout_width="match_parent"
+        android:layout_height="210dp"
+        android:contentDescription="景点图片"
+        android:scaleType="centerCrop"
+        android:src="@drawable/yuantouzhu" />
 
     <TextView
         android:id="@+id/detailNameTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/black"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/hometown_text"
         android:textSize="24sp"
         android:textStyle="bold" />
 
@@ -18,7 +28,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:textColor="#333333"
+        android:textColor="@color/hometown_text"
         android:textSize="16sp" />
 
     <TextView
@@ -26,7 +36,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:textColor="#555555"
+        android:background="@drawable/bg_card"
+        android:padding="12dp"
+        android:textColor="@color/hometown_muted"
         android:textSize="15sp" />
 
     <Button
@@ -34,23 +46,34 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:background="@drawable/bg_button_secondary"
+        android:textColor="@color/hometown_primary"
         android:text="返回列表" />
 
     <Button
         android:id="@+id/startAudioButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/bg_button_primary"
+        android:textColor="@color/white"
         android:text="开始讲解" />
 
     <Button
         android:id="@+id/stopAudioButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/bg_button_secondary"
+        android:textColor="@color/hometown_primary"
         android:text="停止讲解" />
 
     <Button
         android:id="@+id/updateButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/bg_button_secondary"
+        android:textColor="@color/hometown_primary"
         android:text="景点已更新" />
 </LinearLayout>

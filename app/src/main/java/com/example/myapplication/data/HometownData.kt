@@ -5,12 +5,12 @@ import com.example.myapplication.model.Scenery
 
 object HometownData {
     val sceneries = listOf(
-        Scenery("趵突泉", "济南三大名胜之一，泉水清澈灵动。", "自然", "40元", true),
-        Scenery("大明湖", "湖光亭影相映，是济南经典游览地。", "休闲", "免费", true),
-        Scenery("千佛山", "山中古迹众多，可俯瞰济南城区。", "人文", "30元", true),
-        Scenery("黑虎泉", "泉群声势有力，临河风景开阔。", "自然", "免费", true),
-        Scenery("山东博物馆", "展示齐鲁历史文化与珍贵文物。", "人文", "免费", true),
-        Scenery("宽厚里", "街区汇集小吃、文创与夜间休闲。", "休闲", "免费", true)
+        Scenery("鼋头渚", "太湖风光精华所在，春季樱花尤为知名。", "自然", "90元", true),
+        Scenery("灵山胜境", "集佛教文化、山水景观与大型建筑于一体。", "人文", "210元", true),
+        Scenery("惠山古镇", "祠堂群、古街巷和惠山泥人文化集中展示。", "人文", "免费", true),
+        Scenery("南长街", "古运河畔历史街区，夜景和小吃很受欢迎。", "休闲", "免费", true),
+        Scenery("蠡园", "依太湖而建的江南园林，湖景与亭廊相映。", "休闲", "45元", true),
+        Scenery("梅园", "以梅花闻名的园林景区，冬春赏梅最佳。", "自然", "60元", true)
     )
 
     fun toContentValues(scenery: Scenery): ContentValues = ContentValues().apply {

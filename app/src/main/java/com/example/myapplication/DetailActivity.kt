@@ -5,8 +5,10 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import com.example.myapplication.data.SceneryImages
 
 class DetailActivity : Activity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,6 +21,10 @@ class DetailActivity : Activity() {
         val price = intent.getStringExtra(EXTRA_PRICE).orEmpty()
         val isOpen = intent.getBooleanExtra(EXTRA_IS_OPEN, false)
 
+        findViewById<ImageView>(R.id.detailImageView).apply {
+            setImageResource(SceneryImages.imageForName(name))
+            contentDescription = "${name}图片"
+        }
         findViewById<TextView>(R.id.detailNameTextView).text = name
         findViewById<TextView>(R.id.detailIntroTextView).text = intro
         findViewById<TextView>(R.id.detailInfoTextView).text =

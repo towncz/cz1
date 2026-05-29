@@ -11,7 +11,7 @@ object SceneryContract {
     const val ONE_SCENERY = 2
 
     const val DATABASE_NAME = "hometown.db"
-    const val DATABASE_VERSION = 1
+    const val DATABASE_VERSION = 2
     const val TABLE_SCENERIES = "sceneries"
 
     object SceneryColumns : BaseColumns {

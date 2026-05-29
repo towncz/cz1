@@ -3,34 +3,54 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="12dp"
-    android:background="#F1F3F4"
+    android:background="@drawable/bg_card"
     android:clickable="true"
     android:focusable="true"
-    android:orientation="vertical"
-    android:padding="16dp">
+    android:orientation="horizontal"
+    android:padding="10dp">
+
+    <ImageView
+        android:id="@+id/sceneryImageView"
+        android:layout_width="112dp"
+        android:layout_height="88dp"
+        android:contentDescription="景点图片"
+        android:scaleType="centerCrop"
+        android:src="@drawable/yuantouzhu" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
 
     <TextView
         android:id="@+id/sceneryNameTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/black"
+        android:textColor="@color/hometown_text"
         android:textSize="18sp"
         android:textStyle="bold" />
 
     <TextView
         android:id="@+id/sceneryTypeTextView"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="6dp"
-        android:textColor="#333333"
+        android:background="@drawable/bg_chip"
+        android:paddingStart="8dp"
+        android:paddingTop="3dp"
+        android:paddingEnd="8dp"
+        android:paddingBottom="3dp"
+        android:textColor="@color/hometown_primary"
         android:textSize="14sp" />
 
     <TextView
         android:id="@+id/sceneryPriceTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:textColor="#333333"
+        android:layout_marginTop="6dp"
+        android:textColor="@color/hometown_text"
         android:textSize="14sp" />
 
     <TextView
@@ -38,7 +58,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        android:textColor="#333333"
+        android:textColor="@color/hometown_muted"
         android:textSize="14sp" />
+    </LinearLayout>
 
 </LinearLayout>
