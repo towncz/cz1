@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/detailNameTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/detailIntroTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:textColor="#333333"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/detailInfoTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:textColor="#555555"
+        android:textSize="15sp" />
+
+    <Button
+        android:id="@+id/backToListButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="返回列表" />
+
+    <Button
+        android:id="@+id/startAudioButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="开始讲解" />
+
+    <Button
+        android:id="@+id/stopAudioButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="停止讲解" />
+
+    <Button
+        android:id="@+id/updateButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="景点已更新" />
+</LinearLayout>
