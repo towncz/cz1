@@ -19,34 +19,44 @@
             android:textStyle="bold" />
 
         <ImageView
-            android:id="@+id/profileImageView"
+            android:id="@+id/schoolLogoImageView"
             android:layout_width="match_parent"
-            android:layout_height="180dp"
+            android:layout_height="120dp"
             android:layout_marginTop="16dp"
-            android:contentDescription="家乡景点图片"
-            android:scaleType="centerCrop"
-            android:src="@drawable/yuantouzhu" />
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:contentDescription="江南大学标识"
+            android:padding="0dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/jndx" />
 
-        <TextView
-            android:layout_width="96dp"
-            android:layout_height="96dp"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/bg_chip"
-            android:gravity="center"
-            android:text="陈振"
-            android:textColor="@color/hometown_primary"
-            android:textSize="22sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/profileTextView"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:background="@drawable/bg_card"
-            android:padding="14dp"
-            android:textColor="@color/hometown_text"
-            android:textSize="16sp" />
+            android:orientation="horizontal"
+            android:padding="14dp">
+
+            <ImageView
+                android:id="@+id/profileImageView"
+                android:layout_width="96dp"
+                android:layout_height="120dp"
+                android:background="@drawable/bg_profile_photo"
+                android:contentDescription="个人图片"
+                android:padding="2dp"
+                android:scaleType="matrix"
+                android:src="@drawable/personalpic" />
+
+            <TextView
+                android:id="@+id/profileTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:layout_weight="1"
+                android:textColor="@color/hometown_text"
+                android:textSize="16sp" />
+        </LinearLayout>
 
         <TextView
             android:layout_width="match_parent"

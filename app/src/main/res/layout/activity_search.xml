@@ -2,29 +2,75 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg_app"
     android:orientation="vertical"
     android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_card"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="景点搜索"
+            android:textColor="@color/hometown_text"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="输入景点名称，跳转到手机地图中查看位置。"
+            android:textColor="@color/hometown_muted"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="190dp"
+        android:layout_marginTop="14dp"
+        android:contentDescription="景点搜索图片"
+        android:scaleType="centerCrop"
+        android:src="@drawable/qingmingqiao" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:background="@drawable/bg_card"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <EditText
+            android:id="@+id/keywordEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="例如：鼋头渚"
+            android:inputType="text"
+            android:singleLine="true"
+            android:textColor="@color/hometown_text"
+            android:textColorHint="@color/hometown_muted" />
+
+        <Button
+            android:id="@+id/mapSearchButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/bg_button_primary"
+            android:text="打开地图搜索"
+            android:textColor="@color/white" />
+    </LinearLayout>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="景点搜索"
-        android:textColor="@color/black"
-        android:textSize="22sp"
-        android:textStyle="bold" />
-
-    <EditText
-        android:id="@+id/keywordEditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:hint="例如：鼋头渚"
-        android:inputType="text" />
-
-    <Button
-        android:id="@+id/mapSearchButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:text="打开地图搜索" />
+        android:text="若地图 App 不支持通用搜索协议，将自动尝试浏览器地图搜索。"
+        android:textColor="@color/hometown_muted"
+        android:textSize="13sp" />
 </LinearLayout>

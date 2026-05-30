@@ -1,6 +1,7 @@
 package com.example.myapplication
 
 import android.app.Activity
+import android.graphics.Matrix
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.LinearLayout
@@ -21,7 +22,27 @@ class AboutActivity : Activity() {
             教育经历：江南大学 本科
         """.trimIndent()
         findViewById<TextView>(R.id.aboutSceneryTextView).text = sceneryNames
+        alignProfilePhotoTop()
         fillImageGallery()
+    }
+
+    private fun alignProfilePhotoTop() {
+        val imageView = findViewById<ImageView>(R.id.profileImageView)
+        imageView.post {
+            val drawable = imageView.drawable ?: return@post
+            val viewWidth = imageView.width - imageView.paddingLeft - imageView.paddingRight
+            val viewHeight = imageView.height - imageView.paddingTop - imageView.paddingBottom
+            val scale = maxOf(
+                viewWidth.toFloat() / drawable.intrinsicWidth,
+                viewHeight.toFloat() / drawable.intrinsicHeight
+            )
+            val dx = (viewWidth - drawable.intrinsicWidth * scale) / 2f + imageView.paddingLeft
+            val dy = imageView.paddingTop.toFloat()
+            imageView.imageMatrix = Matrix().apply {
+                setScale(scale, scale)
+                postTranslate(dx, dy)
+            }
+        }
     }
 
     private fun fillImageGallery() {
