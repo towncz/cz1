@@ -17,10 +17,10 @@ object SceneryImages {
             name.contains("鼋头渚") -> R.drawable.yuantouzhu
             name.contains("灵山") -> R.drawable.linshanshengjin
             name.contains("惠山") -> R.drawable.huishanguzhen
-            name.contains("南长") -> R.drawable.nanchangjie
+            name.contains("南长街") -> R.drawable.nanchangjie
             name.contains("蠡园") -> R.drawable.liyuan
             name.contains("梅园") -> R.drawable.meiyuan
-            name.contains("清名桥") || name.contains("清明桥") -> R.drawable.qingmingqiao
+            name.contains("清名桥") || name.contains("古运河") -> R.drawable.qingmingqiao
             else -> R.drawable.yuantouzhu
         }
     }

@@ -1,4 +1,4 @@
-package com.example.myapplication
+package com.example.myapplication.service
 
 import android.app.Service
 import android.content.Intent
@@ -25,10 +25,7 @@ class TicketQueryService : Service() {
     }
 
     fun getTicketPrice(sceneryName: String): String {
-        return HometownData.sceneries
-            .firstOrNull { it.name == sceneryName }
-            ?.price
-            ?: "未知"
+        return HometownData.sceneries.firstOrNull { it.name == sceneryName }?.price ?: "未知"
     }
 
     companion object {

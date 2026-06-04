@@ -1,4 +1,4 @@
-package com.example.myapplication
+package com.example.myapplication.provider
 
 import android.content.ContentProvider
 import android.content.ContentUris
@@ -35,7 +35,6 @@ class SceneryProvider : ContentProvider() {
                 null,
                 sortOrder ?: "${SceneryContract.SceneryColumns.ID} ASC"
             )
-
             SceneryContract.ONE_SCENERY -> db.query(
                 SceneryContract.TABLE_SCENERIES,
                 projection,
@@ -45,10 +44,8 @@ class SceneryProvider : ContentProvider() {
                 null,
                 sortOrder
             )
-
             else -> throwInvalidUri(uri)
         }
-
         cursor.setNotificationUri(context?.contentResolver, uri)
         return cursor
     }
@@ -70,20 +67,17 @@ class SceneryProvider : ContentProvider() {
     }
 
     override fun delete(uri: Uri, selection: String?, selectionArgs: Array<out String>?): Int {
-        val db = dbHelper.writableDatabase
         val count = when (uriMatcher.match(uri)) {
-            SceneryContract.ALL_SCENERIES -> db.delete(
+            SceneryContract.ALL_SCENERIES -> dbHelper.writableDatabase.delete(
                 SceneryContract.TABLE_SCENERIES,
                 selection,
                 selectionArgs
             )
-
-            SceneryContract.ONE_SCENERY -> db.delete(
+            SceneryContract.ONE_SCENERY -> dbHelper.writableDatabase.delete(
                 SceneryContract.TABLE_SCENERIES,
                 "${SceneryContract.SceneryColumns.ID}=?",
                 arrayOf(ContentUris.parseId(uri).toString())
             )
-
             else -> throwInvalidUri(uri)
         }
 
@@ -98,22 +92,19 @@ class SceneryProvider : ContentProvider() {
         selection: String?,
         selectionArgs: Array<out String>?
     ): Int {
-        val db = dbHelper.writableDatabase
         val count = when (uriMatcher.match(uri)) {
-            SceneryContract.ALL_SCENERIES -> db.update(
+            SceneryContract.ALL_SCENERIES -> dbHelper.writableDatabase.update(
                 SceneryContract.TABLE_SCENERIES,
                 values,
                 selection,
                 selectionArgs
             )
-
-            SceneryContract.ONE_SCENERY -> db.update(
+            SceneryContract.ONE_SCENERY -> dbHelper.writableDatabase.update(
                 SceneryContract.TABLE_SCENERIES,
                 values,
                 "${SceneryContract.SceneryColumns.ID}=?",
                 arrayOf(ContentUris.parseId(uri).toString())
             )
-
             else -> throwInvalidUri(uri)
         }
 

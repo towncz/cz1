@@ -4,14 +4,14 @@ import android.net.Uri
 import android.provider.BaseColumns
 
 object SceneryContract {
-    const val AUTHORITY = "com.example.hometown"
+    const val AUTHORITY = "com.chenzhen.hometown"
     val CONTENT_URI: Uri = Uri.parse("content://$AUTHORITY/sceneries")
 
     const val ALL_SCENERIES = 1
     const val ONE_SCENERY = 2
 
     const val DATABASE_NAME = "hometown.db"
-    const val DATABASE_VERSION = 2
+    const val DATABASE_VERSION = 3
     const val TABLE_SCENERIES = "sceneries"
 
     object SceneryColumns : BaseColumns {

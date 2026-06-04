@@ -1,4 +1,4 @@
-package com.example.myapplication
+package com.example.myapplication.provider
 
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
@@ -35,5 +35,4 @@ class SceneryDBHelper(context: Context) : SQLiteOpenHelper(
         db.execSQL("DROP TABLE IF EXISTS ${SceneryContract.TABLE_SCENERIES}")
         onCreate(db)
     }
-
 }

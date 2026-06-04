@@ -1,4 +1,4 @@
-package com.example.myapplication
+package com.example.myapplication.receiver
 
 import android.content.BroadcastReceiver
 import android.content.Context
@@ -9,7 +9,6 @@ import android.util.Log
 import android.widget.Toast
 
 class NetworkReceiver : BroadcastReceiver() {
-
     override fun onReceive(context: Context, intent: Intent) {
         if (intent.action != ConnectivityManager.CONNECTIVITY_ACTION) {
             Log.w(TAG, "Ignore unsupported action: ${intent.action}")
@@ -26,11 +25,9 @@ class NetworkReceiver : BroadcastReceiver() {
     }
 
     private fun isNetworkConnected(context: Context): Boolean {
-        val connectivityManager =
-            context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val connectivityManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
         val activeNetwork = connectivityManager.activeNetwork ?: return false
         val capabilities = connectivityManager.getNetworkCapabilities(activeNetwork) ?: return false
-
         return capabilities.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET) &&
             capabilities.hasCapability(NetworkCapabilities.NET_CAPABILITY_VALIDATED)
     }

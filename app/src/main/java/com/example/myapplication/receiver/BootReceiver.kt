@@ -1,4 +1,4 @@
-package com.example.myapplication
+package com.example.myapplication.receiver
 
 import android.Manifest
 import android.app.NotificationChannel
@@ -12,12 +12,13 @@ import android.os.Build
 import android.util.Log
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
+import com.example.myapplication.R
 import com.example.myapplication.data.HometownData
 import com.example.myapplication.model.Scenery
+import com.example.myapplication.ui.MainActivity
 import java.util.Calendar
 
 class BootReceiver : BroadcastReceiver() {
-
     override fun onReceive(context: Context, intent: Intent) {
         if (intent.action != Intent.ACTION_BOOT_COMPLETED) {
             Log.w(TAG, "Ignore unsupported action: ${intent.action}")
@@ -68,8 +69,7 @@ class BootReceiver : BroadcastReceiver() {
         ).apply {
             description = "开机后推送今日推荐家乡景点"
         }
-        val notificationManager = context.getSystemService(NotificationManager::class.java)
-        notificationManager.createNotificationChannel(channel)
+        context.getSystemService(NotificationManager::class.java).createNotificationChannel(channel)
         Log.d(TAG, "Notification channel ensured: $CHANNEL_ID")
     }
 

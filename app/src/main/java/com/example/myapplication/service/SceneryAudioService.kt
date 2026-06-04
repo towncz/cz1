@@ -1,4 +1,4 @@
-package com.example.myapplication
+package com.example.myapplication.service
 
 import android.app.Service
 import android.content.Intent
@@ -27,11 +27,7 @@ class SceneryAudioService : Service() {
     }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
-        sceneryName = intent?.getStringExtra(EXTRA_SCENERY_NAME).orEmpty()
-        if (sceneryName.isEmpty()) {
-            sceneryName = "当前景点"
-        }
-
+        sceneryName = intent?.getStringExtra(EXTRA_SCENERY_NAME).orEmpty().ifBlank { "当前景点" }
         handler.removeCallbacks(playRunnable)
         playIndex = 0
         Log.d(TAG, "服务启动：$sceneryName")

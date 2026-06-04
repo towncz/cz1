@@ -1,14 +1,14 @@
-package com.example.myapplication
+package com.example.myapplication.receiver
 
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.util.Log
+import com.example.myapplication.ui.MainActivity
 
 class SceneryUpdateReceiver(
     private val onSceneryUpdated: () -> Unit
 ) : BroadcastReceiver() {
-
     override fun onReceive(context: Context, intent: Intent) {
         if (intent.action != MainActivity.ACTION_SCENERY_UPDATED) {
             Log.w(TAG, "Ignore unsupported action: ${intent.action}")
